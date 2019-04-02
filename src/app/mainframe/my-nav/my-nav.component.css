@@ -1,7 +1,5 @@
 .sidenav-container {
   height: 100%;
-  flex-grow : 1;
-
 }
 
 .sidenav {
@@ -16,10 +14,4 @@
   position: sticky;
   top: 0;
   z-index: 1;
-}
-
-.body-div {
-  display: flex;
-  flex-flow: column;
-  height: 100%;
 }

@@ -39,7 +39,6 @@ const appRoutes: Routes = [
     ThirdPageComponent,
     CatalogComponent,
     LoadingScreenComponent,
-    
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -67,9 +66,11 @@ const appRoutes: Routes = [
       multi: true
     }
   ],
+
   bootstrap: [AppComponent]
 })
 
 
 export class AppModule { 
+
 }
