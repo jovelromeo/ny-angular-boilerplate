@@ -16,6 +16,8 @@ import { CatalogComponent } from './pages/catalog/catalog.component';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 import { LoadingScreenInterceptor } from './interceptors/loading.interceptor';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { DashboardDemoComponent } from './dashboard-demo/dashboard-demo.component';
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 const appRoutes: Routes = [
   { path: '',
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
   { path: 'catalog', component: CatalogComponent },
   { path: 'first-page', component: FirstPageComponent },
   { path: 'second-page', component: SecondPageComponent },
-  { path: 'third-page', component: ThirdPageComponent }
+  { path: 'third-page', component: ThirdPageComponent },
+  { path: 'dashboard', component: DashboardDemoComponent },
 ];
 
 @NgModule({
@@ -39,9 +42,10 @@ const appRoutes: Routes = [
     ThirdPageComponent,
     CatalogComponent,
     LoadingScreenComponent,
+    DashboardDemoComponent,
   ],
   imports: [
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes,{useHash:true}),
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -64,7 +68,9 @@ const appRoutes: Routes = [
       provide: HTTP_INTERCEPTORS,
       useClass: LoadingScreenInterceptor,
       multi: true
-    }
+    },
+    // {provide: LocationStrategy, 
+    //   useClass: HashLocationStrategy},
   ],
 
   bootstrap: [AppComponent]

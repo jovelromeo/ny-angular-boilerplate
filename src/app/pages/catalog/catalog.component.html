@@ -1,25 +1,83 @@
-<div class="mat-elevation-z8">
-  <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
-    </ng-container>
+<div class="grid-container">
+  <h1 class="mat-h1">Catálogo de productos</h1>
+  <div class="example-container mat-elevation-z8">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      aria-label="Elements"
+    >
+      <!-- Id Column -->
+      <ng-container matColumnDef="idItem">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>idItem</th>
+        <td mat-cell *matCellDef="let row">{{ row.idItem }}</td>
+      </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-      <td mat-cell *matCellDef="let row">{{row.name}}</td>
-    </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="grupo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>grupo</th>
+        <td mat-cell *matCellDef="let row">{{ row.grupo }}</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="descripcion">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>descripcion</th>
+        <td mat-cell *matCellDef="let row">{{ row.descripcion }}</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="marca">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>marca</th>
+        <td mat-cell *matCellDef="let row">{{ row.marca }}</td>
+      </ng-container>
+      <!-- Name Column -->
+      <ng-container matColumnDef="vehiculo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>vehiculo</th>
+        <td mat-cell *matCellDef="let row">{{ row.vehiculo }}</td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+       <ng-container matColumnDef="descripcion2">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>descripcion2</th>
+        <td mat-cell *matCellDef="let row">{{ row.descripcion2 }}</td>
+      </ng-container> 
+       
+      <ng-container matColumnDef="stock">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>stock</th>
+        <td mat-cell *matCellDef="let row">{{ row.stock }}</td>
+      </ng-container>
 
-  <mat-paginator #paginator
+      
+      <ng-container matColumnDef="scanner">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>scanner</th>
+        <td mat-cell *matCellDef="let row">{{ row.scanner }}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="venta">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>venta</th>
+        <td mat-cell *matCellDef="let row">{{ row.venta }}</td>
+      </ng-container>
+    
+      <ng-container matColumnDef="pvp">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>pvp</th>
+        <td mat-cell *matCellDef="let row">{{ row.pvp }}</td>
+      </ng-container>
+
+    
+      <ng-container matColumnDef="agregar">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>agregar</th>
+        <td mat-cell *matCellDef="let row">{{ row.agregar }}</td>
+      </ng-container> 
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      #paginator
       [length]="dataSource.data.length"
       [pageIndex]="0"
-      [pageSize]="50"
-      [pageSizeOptions]="[25, 50, 100, 250]">
-  </mat-paginator>
+      [pageSize]="25"
+      [pageSizeOptions]="[25, 50, 100, 250]"
+    >
+    </mat-paginator>
+  </div>
+
 </div>

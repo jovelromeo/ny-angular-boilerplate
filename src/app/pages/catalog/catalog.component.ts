@@ -15,18 +15,36 @@ export class CatalogComponent implements OnInit {
   dataSource: CatalogDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns =["idItem",
+        "grupo",
+        "descripcion",
+        "marca",
+        "vehiculo",
+        "descripcion2",
+        "stock",
+        "scanner",
+        "venta",
+        "pvp",
+        "agregar"
+      ];
 
   constructor(private productsService:ProductsService){ }
 
   ngOnInit() {
     this.getAllProducts();
     this.dataSource = new CatalogDataSource(this.paginator, this.sort);
+
   }
   public getAllProducts = () => {
-    this.productsService.getProducts('api/owner',"","")
-    .subscribe(res => {
-      this.dataSource.data = res as IProduct[];
+    this.productsService.getProducts("","","")
+    .subscribe(data => {
+      this.dataSource = new CatalogDataSource(this.paginator, this.sort);
+      this.dataSource.data = data;
     })
+    // this.patientService.getPatients().subscribe((data) => {
+    //   this.patients = data;
+    //   console.log('#####patients inside ngonit', this.patients);
+    //   this.dataSource = new MatTableDataSource(this.patients);
+    // });
   }
 }
