@@ -7,7 +7,7 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 @Component({
   selector: 'app-third-page',
   templateUrl: './third-page.component.html',
-  styleUrls: ['./third-page.component.scss']
+  styleUrls: ['./third-page.component.css']
 })
 export class ThirdPageComponent  {
   name = 'Angular 5';
