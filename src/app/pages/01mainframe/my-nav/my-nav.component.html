@@ -25,11 +25,10 @@
         <a mat-list-item routerLink="/second-page">Desacargar</a>
         <a mat-list-item routerLink="/third-page">Configuración de usuario</a>
         <a mat-list-item routerLink="/third-page">Clave</a>
-        <a mat-list-item routerLink="/third-page">Cerrar sesión</a>
+        <a mat-list-item (click)="logout()">Cerrar sesión</a>
       </mat-nav-list>        
   </mat-sidenav>
   <mat-sidenav-content>
-   
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
   </mat-sidenav-content>
