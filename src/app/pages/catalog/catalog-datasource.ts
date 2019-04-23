@@ -66,7 +66,7 @@ export class CatalogDataSource extends DataSource<IProduct> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.descripcion, b.descripcion, isAsc);
+        case 'pvp': return compare(a.pvp, b.pvp, isAsc);
         case 'id': return compare(+a.idItem, +b.idItem, isAsc);
         default: return 0;
       }

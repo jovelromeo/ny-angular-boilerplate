@@ -1,6 +1,6 @@
 <!-- <button (click)="toggleAutenticated($event)">toggle</button>
 <button (click)="logout()">log out</button> -->
-<firebase-ui style="height: 100%" *ngIf="!autenticatedUser"
+<!-- <firebase-ui style="height: 100%" *ngIf="!autenticatedUser"
  (signInSuccessWithAuthResult)="successCallback($event)"
- (signInFailure)="errorCallback($event)" ></firebase-ui>
+ (signInFailure)="errorCallback($event)" ></firebase-ui> -->
 <app-my-nav *ngIf="autenticatedUser"></app-my-nav>

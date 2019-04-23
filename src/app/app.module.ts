@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyNavComponent } from './pages/01mainframe/my-nav/my-nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RouterModule, Routes } from '@angular/router';
-import { MatToolbarModule, MatButtonModule, MatCheckboxModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatCheckboxModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatSelectModule, MatInputModule } from '@angular/material';
 import { MyDashboardComponent } from './pages/01mainframe/my-dashboard/my-dashboard.component';
 import { MyTableComponent } from './components/my-table/my-table.component';
 import { FirstPageComponent } from './pages/first-page/first-page.component';
@@ -19,17 +19,9 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { DashboardDemoComponent } from './dashboard-demo/dashboard-demo.component';
 // import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import {environment} from '../environments/environment';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-// import {FirebaseUIModule} from 'firebaseui-angular';
-// import * as firebase from 'firebase/app';
-// import * as firebaseui from 'firebaseui';
-// currently there is a bug while building the app with --prod
-// - https://github.com/RaphaelJenni/FirebaseUI-Angular/issues/76
-// the plugin exposes the two libraries as well. You can use those:
-import {FirebaseUIModule, firebase, firebaseui} from 'firebaseui-angular';
 
-import {AngularFireModule} from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AuthWrapperComponent } from './pages/01mainframe/auth-wrapper/auth-wrapper.component';
 
 const appRoutes: Routes = [
@@ -44,35 +36,6 @@ const appRoutes: Routes = [
   { path: 'dashboard', component: DashboardDemoComponent },
 ];
 
-const firebaseUiAuthConfig: firebaseui.auth.Config = {
-  // signInFlow: 'popup',
-  signInOptions: [
-    firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-    {
-      scopes: [
-        'public_profile',
-        'email',
-        'user_likes',
-        'user_friends'
-      ],
-      customParameters: {
-        'auth_type': 'reauthenticate'
-      },
-      provider: firebase.auth.FacebookAuthProvider.PROVIDER_ID
-    },
-    firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-    // firebase.auth.GithubAuthProvider.PROVIDER_ID,
-    // {
-    //   requireDisplayName: false,
-    //   provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
-    // },
-    // firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-    // firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
-  ],
-  tosUrl: 'www.meditrack.com/tos',
-  privacyPolicyUrl: 'www.meditrack.com/ppu',
-  credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM
-};
 
 @NgModule({
   declarations: [
@@ -90,9 +53,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],
   imports: [
     RouterModule.forRoot(appRoutes,{useHash:true}),
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
@@ -109,6 +69,11 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    FormsModule, 
+    ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [
     {

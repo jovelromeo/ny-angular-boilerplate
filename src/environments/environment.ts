@@ -3,15 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  firebaseConfig: {
-    apiKey: "AIzaSyCMWIvtmKJ9100qkGMpUHp1Lxu8WD-4jQ0",
-    authDomain: "meditrack-a97e9.firebaseapp.com",
-    databaseURL: "https://meditrack-a97e9.firebaseio.com",
-    projectId: "meditrack-a97e9",
-    storageBucket: "meditrack-a97e9.appspot.com",
-    messagingSenderId: "870710252385"
-  }
+  production: false
 };
 
 /*

@@ -1,162 +1,134 @@
-<!-- <div class="grid-container">
-    <h1 class="mat-h1">Catálogo de productos</h1>
-    <div class="example-container mat-elevation-z8">
-      <table role="table" class="mat-table">
-    <thead role="rowgroup">
-      <tr role="row">
-        <th role="columnheader" class="mat-header-cell">First Name</th>
-        <th role="columnheader" class="mat-header-cell">Last Name</th>
-        <th role="columnheader" class="mat-header-cell">Job Title</th>
-        <th role="columnheader" class="mat-header-cell">Favorite Color</th>
-        <th role="columnheader" class="mat-header-cell">Wars or Trek?</th>
-        <th role="columnheader" class="mat-header-cell">Secret Alias</th>
-        <th role="columnheader" class="mat-header-cell">Date of Birth</th>
-        <th role="columnheader" class="mat-header-cell">Dream Vacation City</th>
-        <th role="columnheader" class="mat-header-cell">GPA</th>
-        <th role="columnheader" class="mat-header-cell">Arbitrary Data</th>
-      </tr>
-    </thead>
-    <tbody role="rowgroup">
-      <tr role="row">
-        <td role="cell" class="mat-cell" data-label="DASLKJDALSKJ">James</td>
-        <td role="cell" class="mat-cell">Matman</td>
-        <td role="cell" class="mat-cell">Chief Sandwich Eater</td>
-        <td role="cell" class="mat-cell">Lettuce Green</td>
-        <td role="cell" class="mat-cell">Trek</td>
-        <td role="cell" class="mat-cell">Digby Green</td>
-        <td role="cell" class="mat-cell">January 13, 1979</td>
-        <td role="cell" class="mat-cell">Gotham City</td>
-        <td role="cell" class="mat-cell">3.1</td>
-        <td role="cell" class="mat-cell">RBX-12</td>
-      </tr>
-      <tr role="row">
-        <td role="cell" class="mat-cell">The</td>
-        <td role="cell" class="mat-cell">Tick</td>
-        <td role="cell" class="mat-cell">Crimefighter Sorta</td>
-        <td role="cell" class="mat-cell">Blue</td>
-        <td role="cell" class="mat-cell">Wars</td>
-        <td role="cell" class="mat-cell">John Smith</td>
-        <td role="cell" class="mat-cell">July 19, 1968</td>
-        <td role="cell" class="mat-cell">Athens</td>
-        <td role="cell" class="mat-cell">N/A</td>
-        <td role="cell" class="mat-cell">Edlund, Ben (July 1996).</td>
-      </tr>
-      <tr role="row">
-        <td role="cell" class="mat-cell">Jokey</td>
-        <td role="cell" class="mat-cell">Smurf</td>
-        <td role="cell" class="mat-cell">Giving Exploding Presents</td>
-        <td role="cell" class="mat-cell">Smurflow</td>
-        <td role="cell" class="mat-cell">Smurf</td>
-        <td role="cell" class="mat-cell">Smurflane Smurfmutt</td>
-        <td role="cell" class="mat-cell">Smurfuary Smurfteenth, 1945</td>
-        <td role="cell" class="mat-cell">New Smurf City</td>
-        <td role="cell" class="mat-cell">4.Smurf</td>
-        <td role="cell" class="mat-cell">One</td>
-      </tr>
-      <tr role="row">
-        <td role="cell" class="mat-cell">Cindy</td>
-        <td role="cell" class="mat-cell">Beyler</td>
-        <td role="cell" class="mat-cell">Sales Representative</td>
-        <td role="cell" class="mat-cell">Red</td>
-        <td role="cell" class="mat-cell">Wars</td>
-        <td role="cell" class="mat-cell">Lori Quivey</td>
-        <td role="cell" class="mat-cell">July 5, 1956</td>
-        <td role="cell" class="mat-cell">Paris</td>
-        <td role="cell" class="mat-cell">3.4</td>
-        <td role="cell" class="mat-cell">3451</td>
-      </tr>
-      <tr role="row">
-        <td role="cell" class="mat-cell">Captain</td>
-        <td role="cell" class="mat-cell">Cool</td>
-        <td role="cell" class="mat-cell">Tree Crusher</td>
-        <td role="cell" class="mat-cell">Blue</td>
-        <td role="cell" class="mat-cell">Wars</td>
-        <td role="cell" class="mat-cell">Steve 42nd</td>
-        <td role="cell" class="mat-cell">December 13, 1982</td>
-        <td role="cell" class="mat-cell">Las Vegas</td>
-        <td role="cell" class="mat-cell">1.9</td>
-        <td role="cell" class="mat-cell">Under the couch</td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-</div> -->
 <div class="grid-container">
-  <h1 class="mat-h1">Catálogo de productos</h1>
-  <div class="example-container mat-elevation-z8">
-    <table class="reponsive-table"
+  <!-- <h1 class="mat-h1">Catálogo de productos</h1> -->
+  
+    <mat-card style="margin-bottom: 12px">
+        <mat-card-content>
+
+          <div class="row" *ngIf="searchByDesc">
+              <div class="col l3 m12 s12">
+                  <mat-form-field >
+                      <mat-label>Select an option</mat-label>
+                      <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Option 1 adfasdf asdfasdfasdf asdfas a sdf </mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+              </div>
+              <div class="col l3 m12 s12" >
+                  <mat-form-field >
+                      <mat-label>Select an option</mat-label>
+                      <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Option 1</mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+              </div>
+              <div class="col l3 m12 s12">
+                  <mat-form-field >
+                      <mat-label>Select an option</mat-label>
+                      <mat-select [(value)]="selected">
+                        <mat-option>None</mat-option>
+                        <mat-option value="option1">Option 1</mat-option>
+                        <mat-option value="option2">Option 2</mat-option>
+                        <mat-option value="option3">Option 3</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+              </div>
+              <div class="col l3 m12 s12">
+                  <button mat-raised-button style="margin-top: 8px; width: 100%">Buscar</button>
+
+              </div>
+         
+          </div>
+
+        </mat-card-content>
+
+</mat-card>
+  
+
+<div class="reponsive-table  mat-elevation-z1">
+    <table 
       mat-table
       [dataSource]="dataSource"
       matSort
       aria-label="Elements">
       
-      <ng-container matColumnDef="idItem">
+      <!-- <ng-container matColumnDef="idItem">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>idItem</th>
         <td mat-cell *matCellDef="let row">{{ row.idItem }}</td>
-      </ng-container>
+      </ng-container> -->
+      
+      <ng-container matColumnDef="agregar" sticky>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-center">
+          <div style="width:100%; padding-left: 20px; padding-top: 12px">  <mat-icon>add_shopping_cart</mat-icon></div>
+          </th>
+          <td mat-cell *matCellDef="let row" class="align-center"><button  mat-button style="margin-top: 8px" (click)="addToChart(row.idItem)"><mat-icon>add_shopping_cart</mat-icon></button></td>
+        </ng-container> 
+  
 
       <ng-container matColumnDef="grupo">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>grupo</th>
-        <td mat-cell *matCellDef="let row">{{ row.grupo }}</td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="off-mobile">GRUPO</th>
+        <td mat-cell *matCellDef="let row" class="off-mobile">{{ row.grupo }}</td>
       </ng-container>
 
       <ng-container matColumnDef="descripcion">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>descripcion</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>ARTICULO</th>
         <td mat-cell *matCellDef="let row">{{ row.descripcion }}</td>
       </ng-container>
 
       <ng-container matColumnDef="marca">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>marca</th>
-        <td mat-cell *matCellDef="let row">{{ row.marca }}</td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="off-mobile1">MARCA</th>
+        <td mat-cell *matCellDef="let row" class="off-mobile1">{{ row.marca }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="vehiculo">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>vehiculo</th>
+      <ng-container matColumnDef="vehiculo" >
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>VEHICULO</th>
         <td mat-cell *matCellDef="let row">{{ row.vehiculo }}</td>
       </ng-container>
 
-       <ng-container matColumnDef="descripcion2">
+       <!-- <ng-container matColumnDef="descripcion2">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>descripcion2</th>
         <td mat-cell *matCellDef="let row">{{ row.descripcion2 }}</td>
-      </ng-container> 
+      </ng-container>  -->
        
       <ng-container matColumnDef="stock">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>stock</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>STOCK</th>
         <td mat-cell *matCellDef="let row">{{ row.stock }}</td>
       </ng-container>
       
-      <ng-container matColumnDef="scanner">
+      <!-- <ng-container matColumnDef="scanner">
         <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-end">scanner</th>
         <td mat-cell *matCellDef="let row" class="align-end">{{ row.scanner }}</td>
       </ng-container>
-    
+     -->
       <ng-container matColumnDef="venta">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-end">venta</th>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-end">LISTA1</th>
         <td mat-cell *matCellDef="let row" class="align-end">{{ row.venta }}</td>
       </ng-container>
     
       <ng-container matColumnDef="pvp">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-end">pvp</th>
-        <td mat-cell *matCellDef="let row" class="align-end">{{ row.pvp }}</td>
+        <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-end" class="off-mobile1">LISTA2</th>
+        <td mat-cell *matCellDef="let row" class="align-end" class="off-mobile1">{{ row.pvp }}</td>
       </ng-container>
     
-      <ng-container matColumnDef="agregar">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header class="align-end">agregar</th>
-        <td mat-cell *matCellDef="let row" class="align-end">{{ row.agregar }}</td>
-      </ng-container> 
-
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
+  </div>
+  <div class="mat-elevation-z1" style="margin-top:8px">
 
     <mat-paginator 
-      #paginator 
-      [length]="dataSource.data.length"
-      [pageIndex]="0"
-      [pageSize]="25"
-      [pageSizeOptions]="[25, 50, 100, 250]"
+    #paginator 
+    [length]="dataSource.data.length"
+    [pageIndex]="0"
+    [pageSize]="25"
+    [pageSizeOptions]="[25, 50, 100, 250]"
     >
-    </mat-paginator>
-  </div>
+  </mat-paginator>
+</div>
 
 </div>
